@@ -1,9 +1,13 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-               message.channel.send('pong');
-}
+	message.channel.send(
+		`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(
+			bot.ws.ping
+		)}ms`
+	);
+};
 
 module.exports.help = {
-  name:"ping"
-}
+	name: "ping",
+};
